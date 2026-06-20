@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>排序算法可视化</title>
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1>📊 排序算法可视化</h1>
+      </header>
+      <main>
+        <div id="controls">
+          <div class="control-group">
+            <label>算法选择</label>
+            <select id="algorithm-select">
+              <option value="bubble">冒泡排序 (Bubble)</option>
+              <option value="selection">选择排序 (Selection)</option>
+              <option value="insertion">插入排序 (Insertion)</option>
+              <option value="merge">归并排序 (Merge)</option>
+              <option value="quick" selected>快速排序 (Quick)</option>
+              <option value="heap">堆排序 (Heap)</option>
+              <option value="shell">希尔排序 (Shell)</option>
+            </select>
+          </div>
+          <div class="control-group">
+            <label>数据量: <span id="size-label">60</span></label>
+            <input type="range" id="size-slider" min="10" max="200" value="60" />
+          </div>
+          <div class="control-group">
+            <label>速度: <span id="speed-label">50</span></label>
+            <input type="range" id="speed-slider" min="1" max="100" value="50" />
+          </div>
+          <div class="control-group buttons">
+            <button id="generate-btn" class="btn">🔄 生成新数据</button>
+            <button id="sort-btn" class="btn btn-primary">▶ 开始排序</button>
+            <button id="stop-btn" class="btn btn-danger" disabled>⏹ 停止</button>
+          </div>
+        </div>
+        <div id="canvas-wrapper">
+          <canvas id="canvas"></canvas>
+        </div>
+        <div id="info-bar">
+          <span id="algo-name" class="info-item highlight">快速排序</span>
+          <span class="info-sep">|</span>
+          <span id="comparisons" class="info-item">比较: 0</span>
+          <span class="info-sep">|</span>
+          <span id="swaps" class="info-item">交换: 0</span>
+          <span class="info-sep">|</span>
+          <span id="time-elapsed" class="info-item">耗时: 0 ms</span>
+          <span class="info-sep">|</span>
+          <span id="status" class="info-item status-idle">就绪</span>
+        </div>
+      </main>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
